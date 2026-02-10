@@ -1,0 +1,56 @@
+body {
+    background-color: #F1F1F1;
+}
+
+
+.app-layout {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 350px 1fr 280px;
+    gap: 10px;
+    grid-template-areas:
+    "header header header"
+    "navbar main sidebar";
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+.navbar {
+    grid-area: navbar;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.main {
+    grid-area: main;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.nav-btn {
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+
