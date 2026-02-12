@@ -6,9 +6,10 @@ body {
 .app-layout {
     display: grid;
     height: 100vh;
-    grid-template-rows: 80px 1fr;
+    grid-template-rows: 70px 1fr;
     grid-template-columns: 350px 1fr 280px;
     gap: 10px;
+    padding: 20px;
     grid-template-areas:
     "header header header"
     "navbar main sidebar";
@@ -17,9 +18,13 @@ body {
 .header {
     grid-area: header;
     display: flex;
+    gap: 9%;
+    align-items: center;
+    width: 100%;
     background-color: white;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.23)
 }
 .navbar {
     grid-area: navbar;
@@ -29,6 +34,7 @@ body {
     background-color: white;
     border-radius: 20px;
     padding: 20px;
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.23)
 }
 
 .main {
@@ -37,6 +43,7 @@ body {
     background-color: white;
     border-radius: 20px;
     padding: 20px;
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.23)
 }
 
 .sidebar {
@@ -44,6 +51,7 @@ body {
     background-color: white;
     border-radius: 20px;
     padding: 20px;
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.23)
 }
 
 .nav-btn {
@@ -53,4 +61,29 @@ body {
     margin-bottom: 5px;
 }
 
+.logo {
+   width: 10%;
+    min-width: 150px;
+}
 
+.topbar-button {
+    background-color: white;
+    width: 100px;
+    padding: 10px 0 10px 0;
+    border-radius: 12px;
+}
+
+.container {
+display: flex;
+    gap: 6%;
+
+
+}
+
+
+.input {
+   border-radius: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
