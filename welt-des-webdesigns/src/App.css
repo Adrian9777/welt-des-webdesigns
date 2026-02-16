@@ -15,22 +15,6 @@ body {
     "navbar main sidebar";
 }
 
-.header {
-    grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.23)
-}
-
-.header .burger {
-    display: none;
-}
-
 .navbar {
     grid-area: navbar;
     display: flex;
@@ -66,22 +50,6 @@ body {
     margin-bottom: 5px;
 }
 
-.logo {
-    width: 10%;
-    min-width: 140px;
-}
-
-.header {
-    width: 100%;
-}
-
-.topbar-button {
-    background-color: white;
-    width: 100px;
-    padding: 10px 0 10px 0;
-    border-radius: 12px;
-}
-
 .container {
     display: flex;
     flex-direction: row;
@@ -91,7 +59,6 @@ body {
 
 
 }
-
 
 .input {
     border-radius: 60px;
@@ -111,6 +78,11 @@ body {
 .navbar a {
     display: block;
     padding: 4px 0;
+}
+
+.navbar a.active {
+    color: #0066cc;
+    font-weight: bold;
 }
 
 .navbar h4 {
@@ -171,30 +143,9 @@ body {
         padding: 8px;
     }
 
-    .topbar-button {
-        display: none;
-    }
-
-    .logo {
-        width: 50px;
-    }
-
-    .header {
-        display: flex;
-        gap: 15px;
-    }
-
-    .header .container {
-        display: none;
-    }
-
     .input {
         float: left;
         width: 90px;
-    }
-
-    .header .burger {
-        display: block;
     }
 
     .app-layout {
@@ -217,15 +168,6 @@ body {
         width: 100%;
         gap: 8px;
         align-items: center;
-    }
-
-    .topbar-button {
-        display: block;
-        min-width: 100px;
-        padding: 10px;
-        text-align: center;
-        margin: 0 3px 0 3px;
-
     }
 
     .box {

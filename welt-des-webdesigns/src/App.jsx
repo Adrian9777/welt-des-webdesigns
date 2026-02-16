@@ -1,5 +1,6 @@
 import './App.css'
-import Header from "./components/Header.jsx";
+import './css/main.scss'
+import Header from "./components/Header/Header.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Content from "./components/Content.jsx";
 import SideBar from "./components/SideBar.jsx";

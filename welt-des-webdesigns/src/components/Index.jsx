@@ -1,4 +1,4 @@
-import Header from "./Header.jsx";
+import Header from "./Header/Header.jsx";
 import '../App.css'
 import SideBar from "./SideBar.jsx";
 function Index (){

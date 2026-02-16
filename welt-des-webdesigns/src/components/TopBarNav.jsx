@@ -1,15 +1,49 @@
-import {Link} from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 function TopBarNav(){
+    const { topic } = useParams();
+
     return (
         <div className="container-topNav">
-            <Link to="/html/start"  className="topbar-button">HTML</Link>
-            <Link to="/css/cssIntro"  className="topbar-button">CSS</Link>
-            <Link to="/js/jsIntro" className="topbar-button">JavaScript</Link>
-            <Link to="/index" className="topbar-button">Index</Link>
-            <Link to="/about" className="topbar-button">Über Uns</Link>
-            <Link to="/imprint" className="topbar-button">Impressum/
-                Datenschutz</Link>
+            <NavLink 
+                to="/html/start" 
+                className={topic === "html" ? "topbar-button active" : "topbar-button 2"}
+            >
+                HTML
+            </NavLink>
+            <NavLink 
+                to="/css/cssIntro" 
+                className={topic === "css" ? "topbar-button active" : "topbar-button"}
+            >
+                CSS
+            </NavLink>
+            <NavLink 
+                to="/js/jsIntro" 
+                className={topic === "js" ? "topbar-button active" : "topbar-button"}
+            >
+                JavaScript
+            </NavLink>
+            <NavLink 
+                to="/index" 
+                className={({ isActive }) => isActive ? "topbar-button active" : "topbar-button"}
+                end
+            >
+                Index
+            </NavLink>
+            <NavLink 
+                to="/about" 
+                className={({ isActive }) => isActive ? "topbar-button active" : "topbar-button"}
+                end
+            >
+                Über Uns
+            </NavLink>
+            <NavLink 
+                to="/imprint" 
+                className={({ isActive }) => isActive ? "topbar-button active" : "topbar-button"}
+                end
+            >
+                Impressum/Datenschutz
+            </NavLink>
         </div>
     )
 }

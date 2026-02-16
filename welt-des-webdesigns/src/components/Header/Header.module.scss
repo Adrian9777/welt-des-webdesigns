@@ -1,0 +1,386 @@
+// ==========================================
+// HEADER - Hauptcontainer
+// ==========================================
+.header {
+  // Grid-Layout für volle Breite
+  grid-area: header;
+  
+  // Basis-Layout mit Flexbox
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  
+  // Visuelles Design
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 2px solid $border-color;
+  border-radius: 20px;
+  
+  // Position und Größe
+  width: 100%;
+  min-height: 70px;
+  
+  // Typen
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+// ==========================================
+// LOGO SEKTION
+// ==========================================
+.logoSection {
+  // Logo nicht schrumpfen
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+// ==========================================
+// LOGO - Markenlogo
+// ==========================================
+.logo {
+  // Größe und Aspektverhältnis
+  width: 140px;
+  height: auto;
+  max-width: 100%;
+  
+  // Verhalten bei Größenänderungen
+  object-fit: contain;
+  flex-shrink: 0;
+  
+  // Interaktion
+  cursor: pointer;
+  transition: transform $transition-speed ease, filter $transition-speed ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+}
+
+// ==========================================
+// MAIN NAVIGATION - Themen (HTML, CSS, JS)
+// ==========================================
+.mainNav {
+  // Flexibles Wachstum
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0; // Erlaubt Schrumpfung
+}
+
+// ==========================================
+// NAVIGATIONS-CONTAINER (wiederverwendbar)
+// ==========================================
+.navContainer {
+  // Flexbox-Layout für horizontale Anordnung
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+  
+  @media (max-width: 1200px) {
+    gap: 0.2rem;
+  }
+}
+
+// ==========================================
+// SEKUNDÄRE NAVIGATION
+// ==========================================
+.secondaryNav {
+  // Versteckt auf mobilen Geräten
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+// ==========================================
+// NAVIGATIONS-BUTTONS
+// ==========================================
+.navButton {
+  // Text und Typen
+  text-decoration: none;
+  color: $text-dark;
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  
+  // Padding und Größe
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  
+  // Übergangseffekte
+  transition: all $transition-speed ease;
+  position: relative;
+  
+  // Hover-Effekt
+  &:hover {
+    background-color: $secondary-color;
+    color: $primary-color;
+    transform: translateY(-2px);
+  }
+  
+  // Aktiver Link-Status
+  &.active {
+    color: $primary-color;
+    font-weight: 600;
+    background-color: rgba($primary-color, 0.08);
+    box-shadow: 0px 3px 10px 0px rgba($primary-color, 0.3);
+    //padding-bottom: calc(0.6rem - 3px);
+  }
+  
+  // Responsive Anpassungen
+  @media (max-width: 1200px) {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 992px) {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}
+
+// ==========================================
+// SUCHFELD
+// ==========================================
+.searchInput {
+  // Größe und Form
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  border: 1px solid $border-color;
+  
+  // Typen
+  font-size: 0.9rem;
+  font-family: inherit;
+  
+  // Breite
+  width: 180px;
+  
+  // Flex-Verhalten
+  flex-shrink: 0;
+  
+  // Platzhalter-Stil
+  &::placeholder {
+    color: #999;
+  }
+  
+  // Fokus-Zustand
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    background-color: rgba($primary-color, 0.02);
+  }
+  
+  // Übergänge
+  transition: all $transition-speed ease;
+  
+  // Responsive Anpassungen
+  @media (max-width: 1200px) {
+    width: 140px;
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+// ==========================================
+// LOGIN-BUTTON
+// ==========================================
+.loginBtn {
+  // Stil
+  background: linear-gradient(135deg, $primary-color 0%, #d7ebff 100%);
+  color: $text-light;
+  border: none;
+  border-radius: 8px;
+  
+  // Größe
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  
+  // Typen
+  font-size: 1.2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  
+  // Übergangseffekte
+  transition: all $transition-speed ease;
+  box-shadow: 0 2px 8px rgba($primary-color, 0.2);
+  
+  // Hover-Effekt
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+  }
+  
+  // Aktiv/Pressed-Effekt
+  &:active {
+    transform: translateY(0);
+  }
+  
+  // Responsive Anpassungen
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+// ==========================================
+// BURGER-MENU (Mobil-Navigation)
+// ==========================================
+.burger {
+  // Desktop versteckt
+  display: none;
+  
+  // Stil
+  background: linear-gradient(135deg, $primary-color 0%, $hover-color 100%);
+  color: $text-light;
+  border: none;
+  border-radius: 8px;
+  
+  // Größe
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  
+  // Typen
+  font-size: 1.3rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  
+  // Übergangseffekte
+  transition: all $transition-speed ease;
+  box-shadow: 0 2px 8px rgba($primary-color, 0.2);
+  
+  // Hover-Effekt
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+  }
+  
+  // Aktiv/Pressed-Effekt
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  // Nur auf mobilen Geräten sichtbar
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// ==========================================
+// RESPONSIVE DESIGN - Tablets (1024px)
+// ==========================================
+@media (max-width: 1024px) {
+  .header {
+    gap: 1rem;
+    padding: 0.7rem 1.2rem;
+    min-height: 65px;
+  }
+  
+  .logo {
+    width: 120px;
+  }
+  
+  .navButton {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .searchInput {
+    width: 140px;
+  }
+}
+
+// ==========================================
+// RESPONSIVE DESIGN - Kleine Tablets (768px)
+// ==========================================
+@media (max-width: 768px) {
+  .header {
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    min-height: 60px;
+  }
+  
+  .logoSection {
+    min-width: auto;
+  }
+  
+  .logo {
+    width: 100px;
+  }
+  
+  .mainNav {
+    display: none; // Verstecken auf Mobil
+  }
+  
+  .secondaryNav {
+    display: none; // Verstecken auf Mobil
+  }
+  
+  .searchInput {
+    display: none; // Suchfeld verstecken
+  }
+  
+  .navButton {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .loginBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .burger {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+// ==========================================
+// RESPONSIVE DESIGN - Smartphones (480px)
+// ==========================================
+@media (max-width: 480px) {
+  .header {
+    gap: 0.3rem;
+    padding: 0.6rem 0.8rem;
+    min-height: 55px;
+  }
+  
+  .logo {
+    width: 85px;
+  }
+  
+  .loginBtn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+  
+  .burger {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}

@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import '../App.css'
 
 function NavBar({navigationPages, topic, titel}) {
@@ -16,12 +16,13 @@ function NavBar({navigationPages, topic, titel}) {
                                 <h4>{item.heading}</h4>
 
                                 {item.pages.map((page) => (
-                                    <Link
+                                    <NavLink
                                         key={page.id}
                                         to={`/${topic}/${page.id}`}
+                                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                                     >
                                         {page.titel}
-                                    </Link>
+                                    </NavLink>
                                 ))}
                             </div>
                         );
@@ -29,12 +30,13 @@ function NavBar({navigationPages, topic, titel}) {
 
                     // ✅ Normale Seite
                     return (
-                        <Link
+                        <NavLink
                             key={item.id}
                             to={`/${topic}/${item.id}`}
+                            className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                         >
                             {item.titel}
-                        </Link>
+                        </NavLink>
                     );
                 })}
             </nav>
