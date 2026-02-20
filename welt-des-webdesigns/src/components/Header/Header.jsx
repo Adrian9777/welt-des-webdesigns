@@ -1,3 +1,36 @@
+/**
+ * Header.jsx - Haupt-Navigationsleiste der Anwendung
+ * 
+ * Diese Komponente rendert die obere Navigationsleiste mit Logo, Hauptnavigation,
+ * Suchfeld und sekundärer Navigation. Sie ist auf allen Seiten sichtbar.
+ * 
+ * Funktionalität:
+ * - Zeigt Logo der Anwendung
+ * - Hauptnavigation: Links zu Topics (HTML, CSS, JavaScript)
+ *   - Aktiv-Status basiert auf URL-Parameter "topic"
+ * - Suchfeld: Für zukünftige Suchfunktionalität (aktuell noch nicht implementiert)
+ * - Sekundäre Navigation: Index, Über Uns, Impressum
+ * - Mobile-Menü-Button: Öffnet/schließt Sidebar-Navigation auf mobilen Geräten
+ * 
+ * Props:
+ * - onToggle: Callback-Funktion, die von App.jsx übergeben wird
+ *             Wird aufgerufen, wenn Burger-Menü geklickt wird
+ *             Toggelt isOpen-State in App.jsx
+ * 
+ * Abhängigkeiten:
+ * - react-router-dom: Für Navigation und aktive Link-Erkennung
+ * - lucide-react: Für Icons (Menu)
+ * - Header.module.scss: Styling für Header-Komponente
+ * 
+ * Verwendung:
+ * - Wird von App.jsx gerendert (für Kurs-Seiten)
+ * - Wird von Index.jsx, About.jsx, Imprint.jsx gerendert (für statische Seiten)
+ * 
+ * Responsive Verhalten:
+ * - Desktop: Zeigt alle Navigationselemente
+ * - Mobile: Versteckt Hauptnavigation, zeigt nur Burger-Menü
+ */
+
 import logo from "../../img/logo.png"
 import {NavLink, useParams} from "react-router-dom";
 import {User, Menu} from "lucide-react";
@@ -57,11 +90,7 @@ function Header({onToggle}){
                     </NavLink>
                 ))}
             </nav>
-            
-            {/* Login Button */}
-            <button className={styles.loginBtn} title="Anmelden" aria-label="Benutzer anmelden">
-                <User size={20} />
-            </button>
+
             
             {/* Mobile Hamburger Menu */}
             <button className={styles.burger} onClick={onToggle} aria-label="Toggle navigation">

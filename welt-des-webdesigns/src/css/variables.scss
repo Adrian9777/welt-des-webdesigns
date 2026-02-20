@@ -1,9 +1,30 @@
+/**
+ * variables.scss - SCSS-Variablen für Design-System
+ * 
+ * Diese Datei definiert zentrale Design-Tokens (Farben, Timing-Werte) für die
+ * gesamte Anwendung. Sie wird von anderen SCSS-Dateien importiert, um konsistentes
+ * Styling zu gewährleisten.
+ * 
+ * Verwendung:
+ * - Wird von Header.module.scss importiert
+ * - Kann von anderen SCSS-Dateien importiert werden
+ * 
+ * Design-Tokens:
+ * - Farben: Primärfarbe, Sekundärfarbe, Textfarben, Border-Farbe
+ * - Timing: Übergangsgeschwindigkeiten
+ * 
+ * Vorteile:
+ * - Zentrale Verwaltung von Design-Werten
+ * - Einfache Anpassung des gesamten Designs
+ * - Konsistenz über alle Komponenten hinweg
+ */
+
 // Farben und Design-Tokens
-$primary-color: #0066cc;
-$secondary-color: #f0f2f5;
-$text-dark: #1a1a1a;
-$text-light: #ffffff;
-$border-color: #e0e0e0;
-$hover-color: #0052a3;
-$active-color: #0066cc;
-$transition-speed: 0.3s;
+$primary-color: #0066cc;        // Hauptfarbe der Anwendung (Blau)
+$secondary-color: #f0f2f5;      // Sekundärfarbe (Heller Grauton)
+$text-dark: #1a1a1a;            // Dunkle Textfarbe
+$text-light: #ffffff;           // Helle Textfarbe (Weiß)
+$border-color: #e0e0e0;         // Border-Farbe (Hellgrau)
+$hover-color: #0052a3;          // Hover-Farbe (Dunkleres Blau)
+$active-color: #0066cc;          // Aktive Elemente-Farbe (gleich primary-color)
+$transition-speed: 0.3s;        // Standard-Übergangsgeschwindigkeit für Animationen

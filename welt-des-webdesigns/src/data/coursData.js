@@ -1,3 +1,32 @@
+/**
+ * coursData.js - Zentrale Datenstruktur für alle Kursinhalte
+ * 
+ * Diese Datei definiert die komplette Struktur aller verfügbaren Kurse (HTML, CSS, JavaScript).
+ * Sie wird von App.jsx verwendet, um die Navigation und Kapitel-Liste zu generieren.
+ * 
+ * Datenstruktur:
+ * - Top-Level: courseData[topic] (z.B. courseData.html)
+ *   - titel: Anzeigename des Topics (z.B. "HTML")
+ *   - navigationPages: Array von Navigations-Gruppen
+ *     - heading: Gruppen-Überschrift (z.B. "Einführung in HTML")
+ *     - pages: Array von Kapiteln
+ *       - id: Eindeutige ID (muss mit chapterConfig.jsx übereinstimmen)
+ *       - titel: Anzeigename des Kapitels
+ * 
+ * Verwendung:
+ * - App.jsx: Lädt currentTopic = courseData[topic] für Navigation
+ * - NavBar.jsx: Rendert navigationPages als Navigationsstruktur
+ * - Content.jsx: Verwendet chapter-id, um Komponente aus chapterConfig zu laden
+ * 
+ * Wichtig: Die id-Werte müssen exakt mit den Keys in chapters/config.jsx übereinstimmen!
+ * 
+ * Beispiel-Flow:
+ * URL: /html/start
+ * → App.jsx: courseData["html"] → currentTopic
+ * → NavBar: currentTopic.navigationPages → zeigt Kapitel-Liste
+ * → Content: chapter="start" → chapterConfig["start"] → Start-Komponente
+ */
+
 const courseData = {
     html: {
         titel: "HTML",
@@ -6,8 +35,8 @@ const courseData = {
                 heading: "Einführung in HTML",
                 pages: [
                     {id: "start", titel: "Start"},
-                    {id: "wasistHTML", titel: "Was ist HTML?"},
-                    {id: "wasBraucheIchUmAnzufamgen", titel: "Was brauche ich um anzufangen?"}
+                    {id: "WasIstHTML", titel: "Was ist HTML?"},
+                    {id: "wasBraucheIchUmAnzufangen", titel: "Was brauche ich um anzufangen?"}
                 ]
             },
             {

@@ -1,8 +1,44 @@
+/**
+ * App.css - Haupt-Stylesheet für Layout und Komponenten
+ * 
+ * Diese Datei enthält die wichtigsten Styles für das Layout der Anwendung.
+ * Sie definiert das Grid-Layout, Komponenten-Styles und responsive Verhalten.
+ * 
+ * Struktur:
+ * - Body-Styles: Hintergrundfarbe
+ * - Grid-Layout: Hauptlayout für Kurs-Seiten (app-layout)
+ * - Komponenten-Styles: NavBar, Content, SideBar
+ * - Utility-Klassen: Buttons, Links, Container
+ * - Responsive Styles: Mobile-Anpassungen
+ * 
+ * Layout-System:
+ * - app-layout: Standard-Layout mit NavBar, Content, SideBar
+ * - layout-alt: Alternatives Layout ohne NavBar (für statische Seiten)
+ * 
+ * Verwendung:
+ * - Wird in App.jsx importiert
+ * - Gilt für alle Kurs-Kapitel-Seiten
+ * - Wird auch von Index.jsx verwendet (layout-alt)
+ * 
+ * Grid-Areas:
+ * - header: Obere Navigationsleiste
+ * - navbar: Linke Sidebar mit Kapitel-Navigation
+ * - main: Hauptinhalt-Bereich
+ * - sidebar: Rechte Sidebar
+ */
+
+/* Body: Hintergrundfarbe für die gesamte Anwendung */
 body {
     background-color: #F1F1F1;
 }
 
 
+/* ==========================================
+   HAUPT-LAYOUT (app-layout)
+   ==========================================
+   Grid-Layout für Kurs-Kapitel-Seiten
+   Struktur: Header oben, NavBar links, Content mitte, SideBar rechts
+*/
 .app-layout {
     display: grid;
     height: 100vh;
@@ -15,6 +51,9 @@ body {
     "navbar main sidebar";
 }
 
+/* NavBar: Linke Sidebar mit Kapitel-Navigation
+   Wird von NavBar.jsx verwendet
+   Zeigt alle Kapitel des aktuellen Topics */
 .navbar {
     grid-area: navbar;
     display: flex;
@@ -26,6 +65,9 @@ body {
     box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.23)
 }
 
+/* Main: Hauptinhalt-Bereich
+   Wird von Content.jsx verwendet
+   Zeigt die aktuelle Chapter-Komponente */
 .main {
     grid-area: main;
     overflow-y: auto;
@@ -35,6 +77,9 @@ body {
     box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.23)
 }
 
+/* Sidebar: Rechte Sidebar
+   Wird von SideBar.jsx verwendet
+   Aktuell für Werbung/weitere Inhalte */
 .sidebar {
     grid-area: sidebar;
     background-color: white;
@@ -43,6 +88,8 @@ body {
     box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.23)
 }
 
+/* Navigation-Button: Stil für NavBar-Links
+   Wird von NavBar.jsx verwendet */
 .nav-btn {
     width: 100%;
     padding: 8px;
@@ -50,6 +97,8 @@ body {
     margin-bottom: 5px;
 }
 
+/* Container: Flex-Container für Header-Elemente
+   Wird möglicherweise von Header-Komponente verwendet */
 .container {
     display: flex;
     flex-direction: row;
@@ -60,6 +109,8 @@ body {
 
 }
 
+/* Input: Stil für Eingabefelder
+   Wird möglicherweise für Suchfeld verwendet */
 .input {
     border-radius: 60px;
     margin-top: 10px;
@@ -67,29 +118,47 @@ body {
     padding-left: 10px;
 }
 
+/* Nav-Container: Container für NavBar-Inhalte
+   Wird von NavBar.jsx verwendet */
 .nav-container {
     margin-top: 15px;
 }
 
+/* Container-TopNav: Mobile-Navigation-Container
+   Wird von TopBarNav.jsx verwendet
+   Standardmäßig versteckt (nur auf Mobile sichtbar) */
 .container-topNav {
     display: none;
 }
 
+/* NavBar-Links: Stil für Kapitel-Links in NavBar
+   Wird von NavBar.jsx verwendet */
 .navbar a {
     display: block;
     padding: 4px 0;
 }
 
+/* Aktiver NavBar-Link: Markiert aktuelles Kapitel
+   Wird automatisch von React Router gesetzt */
 .navbar a.active {
     color: #0066cc;
     font-weight: bold;
 }
 
+/* NavBar-Überschriften: Stil für Gruppen-Überschriften
+   Wird von NavBar.jsx für heading verwendet */
 .navbar h4 {
     margin-top: 20px;
     margin-bottom: 8px;
 }
 
+/* ==========================================
+   ALTERNATIVES LAYOUT (layout-alt)
+   ==========================================
+   Grid-Layout für statische Seiten ohne NavBar
+   Wird von Index.jsx, About.jsx, Imprint.jsx verwendet
+   Struktur: Header oben, Content mitte, SideBar rechts
+*/
 .layout-alt {
     display: grid;
     height: 100vh;
@@ -102,19 +171,27 @@ body {
     "main main sidebar";
 }
 
+/* Pages: Container für Chapter-Inhalte
+   Wird von allen Chapter-Komponenten verwendet (z.B. Start.jsx, WasIstHTML.jsx)
+   Definiert Padding und Typografie für Kurs-Inhalte */
 .pages {
     padding: 20px;
 
 }
 
+/* Pages-Überschriften: Stil für h2 in Chapter-Komponenten */
 .pages h2 {
     padding-bottom: 10px;
 }
 
+/* Pages-Unterüberschriften: Stil für h3 in Chapter-Komponenten */
 .pages h3 {
     padding: 15px 0 8px 0;
 }
 
+/* Box: Container für NextChapterBox-Komponente
+   Wird von NextChapterBox.jsx verwendet
+   Zeigt Navigations-Box zum nächsten Kapitel */
 .box {
     display: flex;
     margin-top: 100px;
@@ -128,6 +205,8 @@ body {
 
 }
 
+/* Box-Button: Stil für Navigations-Button in NextChapterBox
+   Blauer Button mit abgerundeten Ecken */
 .box button {
     padding: 8px 13px;
     border: none;
@@ -137,7 +216,95 @@ body {
     margin-right: 10px;
 }
 
+/* Topbar-Button: Stil für Buttons in TopBarNav
+   Wird von TopBarNav.jsx verwendet
+   Mobile-Navigation-Buttons */
+.topbar-button {
+    width: 200px;
+}
 
+/* Active: Allgemeine Klasse für aktive Elemente
+   Wird für aktive Navigation-Buttons verwendet */
+.active {
+    background-color: rgba(0, 136, 255, 0.1);
+}
+@media (max-width: 840px) {
+
+    .app-layout {
+        grid-template-rows: 70px auto 1fr 150px;
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "topbarNav"
+            "main"
+             "sidebar";
+    }
+
+    .container-topNav {
+        grid-area: topbarNav;
+        display: flex;
+        flex-direction: row;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        width: 100%;
+        gap: 16px;
+        align-items: center;
+
+    }
+
+    .container-topNav a {
+        display: flex;
+        justify-content: center; /* horizontal */
+        align-items: center;
+        flex: 0 0 70px;
+        width: 250px;
+        text-decoration: none;
+        color: black;
+        padding: 10px 50px 10px 50px;
+        border-radius: 10px;
+        white-space: nowrap;
+
+    }
+
+  .hidden-button{
+        display: none !important;
+    }
+
+    .navbar.open {
+        display: block;
+    }
+
+    .navbar.close {
+        display: none;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 150px;
+        z-index: 999;
+        max-width: 100%;
+        margin-right: 20px;
+        max-height: calc(100dvh - 150px);
+        overflow-y: auto;
+        box-sizing: border-box;
+        border-radius: 20px 20px 0 0;
+        margin-top:8px;
+        width: 335px;
+    }
+    .box button span {
+        display: block;
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - MOBILE (< 390px)
+   ==========================================
+   Mobile-Anpassungen für kleine Bildschirme
+   Ändert Layout zu Single-Column mit Mobile-Navigation
+*/
 @media (max-width: 390px) {
     .pages {
         padding: 8px;
@@ -147,6 +314,7 @@ body {
         float: left;
         width: 90px;
     }
+
 
     .app-layout {
         grid-template-rows: 70px auto 1fr 150px;
@@ -168,6 +336,20 @@ body {
         width: 100%;
         gap: 8px;
         align-items: center;
+
+    }
+
+    .container-topNav a {
+        display: flex;
+        justify-content: center; /* horizontal */
+        align-items: center;
+        flex: 0 0 70px;
+        width: 250px;
+        text-decoration: none;
+        color: black;
+        padding: 10px 8px 10px 8px;
+        border-radius: 10px;
+
     }
 
     .box {
@@ -196,9 +378,19 @@ body {
 
     .navbar {
         position: fixed;
-        top: 100px;
+        top: 150px;
         z-index: 999;
         max-width: 100%;
         margin-right: 20px;
+        max-height: calc(100dvh - 150px);
+        overflow-y: auto;
+        box-sizing: border-box;
+        border-radius: 20px 20px 0 0;
+        margin-top:8px;
+        width: 335px;
     }
+
 }
+
+
+

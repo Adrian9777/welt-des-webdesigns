@@ -1,9 +1,39 @@
+/**
+ * index.css - Globale Basis-Styles
+ * 
+ * Diese Datei enthält globale CSS-Resets und Basis-Styles, die für die gesamte
+ * Anwendung gelten. Sie wird in main.jsx importiert und ist der erste Stylesheet,
+ * der geladen wird.
+ * 
+ * Funktionalität:
+ * - CSS Reset: Entfernt Standard-Styles aller Browser
+ * - Box-Sizing: Setzt box-sizing auf border-box für alle Elemente
+ * - Font-Family: Definiert Standard-Schriftart für die gesamte Anwendung
+ * 
+ * Verwendung:
+ * - Wird in main.jsx importiert (Entry-Point)
+ * - Gilt für alle Komponenten der Anwendung
+ * 
+ * CSS Reset:
+ * - padding: 0 - Entfernt Standard-Padding
+ * - margin: 0 - Entfernt Standard-Margin
+ * - box-sizing: border-box - Padding und Border werden in Breite/Höhe eingerechnet
+ * 
+ * Typografie:
+ * - font-family: Definiert Schriftart-Fallback-Kette
+ *   - Inter: Moderne, lesbare Schriftart
+ *   - system-ui: System-Standardschriftart als Fallback
+ *   - sans-serif: Generischer Fallback
+ */
+
+/* CSS Reset: Entfernt alle Standard-Styles für konsistentes Aussehen */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Root-Element: Definiert globale Variablen und Standards */
 :root {
     font-family: Inter, system-ui, sans-serif;
 }
